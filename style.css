@@ -101,7 +101,7 @@ body{
 
     font-family:'Outfit',sans-serif;
 
-    font-size:clamp(70px,8vw,120px);
+    font-size:clamp(48px,6vw,80px);
 
     font-weight:900;
 
@@ -117,13 +117,12 @@ body{
     background-clip:text;
     color:transparent;
 
-    letter-spacing:-2px;
+    letter-spacing:-1px;
 
     text-shadow:
         0 0 12px rgba(255,160,210,.55),
         0 0 28px rgba(255,120,190,.45),
         0 0 55px rgba(255,90,170,.30);
-   filter:drop-shadow(0 8px 20px rgba(255,120,190,.35));
 
 }
 
