@@ -51,7 +51,10 @@ No matter what happens...
 
 I'll always choose you.
 
-Forever ❤️`;
+Forever ❤️
+
+
+.`;
 
 let index = 0;
 
