@@ -179,11 +179,10 @@ body{
 
 /* Back */
 
-.envelope::before{
-
-    content:"";
+.back{
 
     position:absolute;
+
     inset:0;
 
     background:#ff74ad;
