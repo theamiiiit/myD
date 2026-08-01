@@ -173,6 +173,8 @@ body{
     max-width:90vw;
    
    height:500px;
+
+   overflow:hidden;
     perspective:1500px;
 
 }
@@ -254,9 +256,9 @@ height:62%;
     left:30px;
     right:30px;
 
-    bottom:20px;
+    bottom:-120px;
 
-    height:500px;
+    height:260px;
 
     background:#fff;
 
@@ -270,7 +272,7 @@ height:62%;
 
     box-shadow:0 15px 35px rgba(0,0,0,.2);
 
-    transform:translateY(340px);
+    transform:translateY(180px);
 
     transition:transform 1.25s cubic-bezier(.22,1,.36,1);
 
@@ -309,7 +311,7 @@ height:62%;
 
 .envelope.open .letter{
 
-    transform:translateY(15px);
+    transform:translateY(-70px);
 
     transition-delay:.45s;
 
