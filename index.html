@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,33 +10,27 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 
 </head>
 
 <body>
 
-    <!-- Floating Hearts -->
-
-    <div id="heart-container"></div>
-
     <!-- Background -->
 
     <canvas id="canvas"></canvas>
+
+    <div id="heart-container"></div>
 
     <!-- Music -->
 
@@ -44,85 +39,72 @@
     </audio>
 
     <button id="musicBtn">
-
         <i class="fa-solid fa-music"></i>
-
     </button>
 
     <!-- Hero -->
 
     <section class="hero">
 
-        <h1>
-
-            Happy Girlfriend's Day ❤️
-
-        </h1>
+        <h1>Happy Girlfriend's Day ❤️</h1>
 
         <p>
-
             A little surprise made only for you...
-
         </p>
 
         <button id="open">
-
             Open My Heart ❤️
-
         </button>
 
     </section>
 
-    <!-- Envelope -->
+    <!-- Letter Section -->
 
-   <section id="letterSection">
+    <section id="letterSection">
 
-    <div class="envelope" id="envelope">
+        <div class="envelope" id="envelope">
 
-    <div class="envelope-back"></div>
+            <div class="flap"></div>
 
-    <div class="letter">
+            <div class="front"></div>
 
-        <h2>💖 To My Love 💖</h2>
+            <div class="letter">
 
-        <p id="typing"></p>
+                <h2>💖 To My Love 💖</h2>
 
-    </div>
+                <p id="typing"></p>
 
-    <div class="flap"></div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
     <!-- Rose -->
 
     <section class="rose-section">
 
         <div class="rose">
-
             🌹
-
         </div>
 
     </section>
 
-    <!-- Memories -->
+        <!-- Gallery -->
 
     <section class="gallery">
 
-        <h2>
-
-            Meri Januu ❤️
-
-        </h2>
+        <h2>Our Beautiful Memories ❤️</h2>
 
         <div class="photos">
 
             <img src="photos/1.jpeg" alt="Memory 1">
-<img src="photos/2.jpeg" alt="Memory 2">
-<img src="photos/3.jpeg" alt="Memory 3">
-<img src="photos/4.jpeg" alt="Memory 4">
+
+            <img src="photos/2.jpeg" alt="Memory 2">
+
+            <img src="photos/3.jpeg" alt="Memory 3">
+
+            <img src="photos/4.jpeg" alt="Memory 4">
 
         </div>
 
@@ -132,11 +114,7 @@
 
     <section class="final">
 
-        <h1>
-
-            ❤️ Happy Girlfriend's Day ❤️
-
-        </h1>
+        <h1>❤️ Happy Girlfriend's Day ❤️</h1>
 
         <p>
 
@@ -144,15 +122,23 @@
 
             I'll always choose you.
 
+            Today.
+
+            Tomorrow.
+
+            Forever.
+
         </p>
 
         <button id="fireworks">
 
-            Click Me ❤️
+            Celebrate ❤️
 
         </button>
 
     </section>
+
+        <!-- JavaScript -->
 
     <script src="script.js"></script>
 
