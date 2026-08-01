@@ -500,3 +500,82 @@ body{
     }
 
 }
+
+.cursor-heart{
+
+    position:fixed;
+
+    width:18px;
+    height:18px;
+
+    background:#ff4d94;
+
+    pointer-events:none;
+
+    z-index:99999;
+
+    transform:translate(-50%,-50%) rotate(45deg);
+
+    border-radius:4px;
+
+    opacity:.75;
+
+    filter:blur(.5px);
+
+    animation:heartFade 1s ease-out forwards;
+
+}
+
+.cursor-heart::before,
+.cursor-heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#ff4d94;
+
+    border-radius:50%;
+
+}
+
+.cursor-heart::before{
+
+    left:-9px;
+
+}
+
+.cursor-heart::after{
+
+    top:-9px;
+
+}
+
+@keyframes heartFade{
+
+    0%{
+
+        opacity:.8;
+
+        transform:
+        translate(-50%,-50%)
+        rotate(45deg)
+        scale(.8);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-90px)
+        rotate(45deg)
+        scale(1.8);
+
+    }
+
+}
