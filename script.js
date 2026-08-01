@@ -443,6 +443,32 @@ setInterval(()=>{
 
 },500);
 
+/* ==========================================
+   CURSOR HEART TRAIL
+========================================== */
+
+let lastCursorHeart = 0;
+
+document.addEventListener("mousemove", (e) => {
+
+    if (Date.now() - lastCursorHeart < 40) return;
+    lastCursorHeart = Date.now();
+
+    const heart = document.createElement("div");
+
+    heart.className = "cursor-heart";
+
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 900);
+
+});
+
 // ----------------------------
 // CONSOLE MESSAGE
 // ----------------------------
