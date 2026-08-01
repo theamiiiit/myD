@@ -1,0 +1,897 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    background:#07020d;
+
+    color:white;
+
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+#canvas{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:0;
+
+    background:
+    linear-gradient(
+    180deg,
+    #05010a,
+    #13081d,
+    #20072c);
+
+}
+.hero,
+.gallery,
+.final,
+#letterSection,
+.rose-section{
+    position:relative;
+    z-index:2;
+}
+
+/* ==========================================
+ HEART CONTAINER
+========================================== */
+
+#heart-container{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    color:#ff4d94;
+
+    opacity:.8;
+
+    animation:float linear infinite;
+
+}
+
+@keyframes float{
+
+    from{
+
+        transform:
+
+        translateY(110vh)
+
+        scale(.5);
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(-20vh)
+
+        scale(1.5);
+
+    }
+
+}
+
+/* ==========================================
+ MUSIC BUTTON
+========================================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#ff3d8d;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 0 20px rgba(255,0,100,.5);
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.15);
+
+    background:#ff66a8;
+
+}
+
+/* ==========================================
+ HERO
+========================================== */
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(45px,7vw,90px);
+
+    line-height:1.2;
+
+    background:
+    linear-gradient(
+    90deg,
+
+    #ff9ecf,
+
+    white,
+
+    #ff4d94);
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    color:#ddd;
+
+}
+
+.hero button{
+
+    margin-top:60px;
+
+    padding:
+
+    18px 45px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+
+    45deg,
+
+    #ff4d94,
+
+    #ff9ecf);
+
+    color:white;
+
+    transition:.4s;
+
+}
+
+.hero button:hover{
+
+    transform:
+
+    scale(1.1);
+
+    box-shadow:
+
+    0 0 40px
+
+    rgba(255,0,120,.7);
+
+}
+
+/* ==========================================
+   PREMIUM ENVELOPE
+========================================== */
+
+#letterSection{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:120px 20px;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    width:700px;
+
+    max-width:90%;
+
+    height:450px;
+
+    margin:auto;
+
+    perspective:1600px;
+
+    overflow:hidden;
+
+    filter:drop-shadow(0 0 60px rgba(255,60,140,.35));
+
+}
+
+/* Back */
+
+.envelope-back{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(145deg,#ff5ea6,#ff8fc5);
+
+    border-radius:24px;
+
+    z-index:1;
+
+}
+
+/* Letter */
+
+.letter{
+
+    position:absolute;
+
+    left:35px;
+
+    right:35px;
+
+    bottom:25px;
+
+    height:380px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    overflow:auto;
+
+    color:#444;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18);
+
+    transform:translateY(430px);
+
+    transition:
+        transform 1.3s cubic-bezier(.22,1,.36,1);
+
+    z-index:2;
+
+}
+
+.letter h2{
+
+    text-align:center;
+
+    color:#ff4d94;
+
+    margin-bottom:25px;
+
+}
+
+#typing{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#444;
+
+    white-space:pre-line;
+
+}
+
+/* Front flap */
+
+.flap{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(145deg,#ff4d94,#ff80bf);
+
+    clip-path:polygon(0 0,100% 0,50% 60%);
+
+    transform-origin:top;
+
+    transition:transform .9s ease;
+
+    z-index:5;
+
+    border-radius:24px;
+
+    backface-visibility:hidden;
+
+}
+
+/* OPEN */
+
+.envelope.open .flap{
+
+    transform:rotateX(-180deg);
+
+}
+
+.envelope.open .letter{
+
+    transform:translateY(-15px);
+
+    transition-delay:.45s;
+
+}
+
+
+/* ==========================================
+   ROSE
+========================================== */
+
+.rose-section{
+
+    min-height:70vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.rose{
+
+    font-size:170px;
+
+    transition:.5s;
+
+    cursor:pointer;
+
+    filter:drop-shadow(0 0 25px crimson);
+
+    animation:bloom 3s infinite;
+
+}
+
+@keyframes bloom{
+
+    0%{
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(.8);
+
+    }
+
+}
+
+.rose:hover{
+
+    transform:scale(1.2) rotate(-8deg);
+
+}
+
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery{
+
+    min-height:100vh;
+
+    padding:100px 8%;
+
+}
+
+.gallery h2{
+
+    text-align:center;
+
+    font-size:55px;
+
+    margin-bottom:70px;
+
+    background:linear-gradient(90deg,#ffb6d9,#fff);
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.photos{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+
+}
+
+.photos img{
+
+    width:100%;
+
+    border-radius:22px;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 15px 45px rgba(255,20,120,.25);
+
+}
+
+.photos img:hover{
+
+    transform:
+
+        scale(1.05)
+
+        rotate(1deg);
+
+    box-shadow:
+
+        0 20px 60px rgba(255,20,120,.55);
+
+}
+
+/* ==========================================
+   FINAL SECTION
+========================================== */
+
+.final{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:50px;
+
+}
+
+.final h1{
+
+    font-size:70px;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(90deg,#ff9ecf,#fff,#ff4d94);
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.final p{
+
+    font-size:24px;
+
+    color:#ddd;
+
+    max-width:750px;
+
+    line-height:2;
+
+}
+
+.final button{
+
+    margin-top:60px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff4d94,#ff85b8);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.final button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 40px rgba(255,50,130,.6);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0b0615;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#ff4d94,#ff85b8);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff2d7a;
+}
+
+/* ==========================================
+   GLASS EFFECTS
+========================================== */
+
+.glass{
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.hero,
+.gallery,
+.final,
+#letterSection{
+    position:relative;
+    z-index:2;
+}
+
+/* ==========================================
+   IMAGE EFFECTS
+========================================== */
+
+.photos img{
+
+    aspect-ratio:3/4;
+
+    object-fit:cover;
+
+}
+
+.photos img:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button{
+
+    font-family:'Poppins',sans-serif;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+/* ==========================================
+   GLOWING TEXT
+========================================== */
+
+.hero h1,
+.gallery h2,
+.final h1{
+
+    text-shadow:
+
+    0 0 15px rgba(255,100,170,.3),
+
+    0 0 35px rgba(255,0,120,.25);
+
+}
+
+/* ==========================================
+   ENVELOPE SHADOW
+========================================== */
+
+.envelope{
+
+    filter:
+
+    drop-shadow(0 0 60px rgba(255,60,140,.25));
+
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.hero,
+.gallery,
+.final,
+.rose-section,
+#letterSection{
+
+    animation:
+
+    fadeUp 1.2s ease;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero button{
+
+padding:15px 35px;
+
+font-size:18px;
+
+}
+
+.letter{
+
+padding:30px;
+
+}
+
+.letter h2{
+
+font-size:30px;
+
+}
+
+#typing{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+.gallery h2{
+
+font-size:40px;
+
+}
+
+.final h1{
+
+font-size:42px;
+
+}
+
+.final p{
+
+font-size:18px;
+
+}
+
+.rose{
+
+font-size:120px;
+
+}
+
+#musicBtn{
+
+width:55px;
+
+height:55px;
+
+font-size:18px;
+
+}
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media(max-width:500px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.gallery{
+
+padding:70px 20px;
+
+}
+
+.photos{
+
+grid-template-columns:1fr;
+
+}
+
+.letter{
+
+padding:20px;
+
+}
+
+#typing{
+
+font-size:16px;
+
+}
+
+.final h1{
+
+font-size:35px;
+
+}
+
+}
+
+/* ==========================================
+   END
+========================================== */
